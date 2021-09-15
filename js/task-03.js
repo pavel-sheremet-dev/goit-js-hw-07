@@ -15,7 +15,6 @@ const images = [
 
 const galleryList = document.querySelector('#gallery');
 galleryList.classList.add('list');
-console.log(galleryList);
 
 const listItemsMarkUp = images
   .map(
