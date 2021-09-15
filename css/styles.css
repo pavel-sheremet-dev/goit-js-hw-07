@@ -1,0 +1,23 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.image {
+  display: block;
+  width: 280px;
+  border-radius: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  padding-left: 10px;
+}
+
+.list-item:not(:last-child) {
+  padding-bottom: 10px;
+}
