@@ -28,3 +28,27 @@ const listItemsMarkUp = images
   .join('');
 
 galleryList.insertAdjacentHTML('beforeend', listItemsMarkUp);
+
+// add head styles
+
+document.querySelector('style').insertAdjacentHTML(
+  'beforeend',
+  `
+.image {
+  display: block;
+  width: 280px;
+  border-radius: 10px;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item:not(:last-child) {
+  padding-bottom: 10px;
+}
+`,
+);
