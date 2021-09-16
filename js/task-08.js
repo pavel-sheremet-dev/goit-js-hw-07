@@ -9,14 +9,18 @@ refs.renderBtn.textContent += ' (Ctrl + Enter)';
 refs.destroyBtn.textContent += ' (Esc)';
 refs.input.value = Math.ceil(Math.random() * 20);
 
+// Functions to create random RGB color
+
 const generateRandomRgbValue = () => Math.round(255 * Math.random());
 
 const generateRandomRgbColor = () =>
   `rgb(${generateRandomRgbValue()}, ${generateRandomRgbValue()}, ${generateRandomRgbValue()})`;
 
-console.log(generateRandomRgbColor());
+// Functions to create array with length that is taken from input
 
 const createIterableArray = length => new Array(length).fill(0);
+
+// Function to create one div box element including task conditions
 
 const createDivEl = (divEl, currentIndex) => {
   divEl = document.createElement('div');
@@ -27,6 +31,8 @@ const createDivEl = (divEl, currentIndex) => {
   divEl.style.margin = '5px';
   return divEl;
 };
+
+// add listeners
 
 refs.renderBtn.addEventListener('click', onRenderBtnClick);
 
@@ -48,7 +54,6 @@ function destroyBoxes() {
 window.addEventListener('keydown', onEnterPress);
 
 function onEnterPress(e) {
-  console.log(e.code);
   if (
     (e.code === 'Enter' && e.ctrlKey) ||
     (e.code === 'NumpadEnter' && e.ctrlKey)
