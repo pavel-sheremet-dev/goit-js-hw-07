@@ -16,7 +16,7 @@ const generateRandomRgbValue = () => Math.round(255 * Math.random());
 const generateRandomRgbColor = () =>
   `rgb(${generateRandomRgbValue()}, ${generateRandomRgbValue()}, ${generateRandomRgbValue()})`;
 
-// Functions to create array with length that is taken from input
+// Function to create array with length that is taken from input
 
 const createIterableArray = length => new Array(length).fill(0);
 
