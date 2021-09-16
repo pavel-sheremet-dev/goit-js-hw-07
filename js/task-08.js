@@ -9,20 +9,21 @@ refs.renderBtn.textContent += ' (Ctrl + Enter)';
 refs.destroyBtn.textContent += ' (Esc)';
 refs.input.value = Math.ceil(Math.random() * 20);
 
-const createIterableArray = length => new Array(length).fill(0);
+const generateRandomRgbValue = () => Math.round(255 * Math.random());
 
-const generateRandomColor = () => {
-  return `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${
-    255 * Math.random()
-  })`;
-};
+const generateRandomRgbColor = () =>
+  `rgb(${generateRandomRgbValue()}, ${generateRandomRgbValue()}, ${generateRandomRgbValue()})`;
+
+console.log(generateRandomRgbColor());
+
+const createIterableArray = length => new Array(length).fill(0);
 
 const createDivEl = (divEl, currentIndex) => {
   divEl = document.createElement('div');
   divEl.textContent = 1 + currentIndex;
   divEl.style.width = 30 + currentIndex * 10 + 'px';
   divEl.style.height = 30 + currentIndex * 10 + 'px';
-  divEl.style.background = generateRandomColor();
+  divEl.style.background = generateRandomRgbColor();
   divEl.style.margin = '5px';
   return divEl;
 };
