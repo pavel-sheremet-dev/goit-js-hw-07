@@ -9,6 +9,9 @@ refs.renderBtn.textContent += ' (Ctrl + Enter)';
 refs.destroyBtn.textContent += ' (Esc)';
 refs.input.value = Math.ceil(Math.random() * 20);
 
+const randomizeInputValue = () =>
+  (refs.input.value = Math.ceil(Math.random() * 20));
+
 // Functions to create random RGB color
 
 const generateRandomRgbValue = () => Math.round(255 * Math.random());
@@ -41,14 +44,13 @@ function onRenderBtnClick() {
   const iterableArray = createIterableArray(boxQty);
   const divElements = iterableArray.map(createDivEl);
   refs.container.append(...divElements);
-  refs.input.value = Math.ceil(Math.random() * 20);
 }
 
 refs.destroyBtn.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
   refs.container.innerHTML = '';
-  refs.input.value = Math.ceil(Math.random() * 20);
+  randomizeInputValue();
 }
 
 window.addEventListener('keydown', onEnterPress);

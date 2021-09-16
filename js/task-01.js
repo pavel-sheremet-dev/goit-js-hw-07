@@ -1,14 +1,12 @@
-const categoriesListItems = document.querySelectorAll('.item');
-
-console.log(`В списке ${categoriesListItems.length} категории`);
+const items = document.querySelectorAll('.item');
+console.log(`В списке ${items.length} категории`);
 
 const printCategoryDescription = item => {
-  const itemTitleName = item.querySelector('h2').textContent;
-  const itemListItemsLength = item.querySelectorAll('li').length;
-  console.table([
-    `Категория: ${itemTitleName}`,
-    `Количество элементов: ${itemListItemsLength}`,
-  ]);
+  const title = item.querySelector('h2');
+  const items = item.querySelectorAll('li');
+  console.log(
+    ` - категория: ${title.textContent} (количество элементов: ${items.length})`,
+  );
 };
 
-categoriesListItems.forEach(printCategoryDescription);
+items.forEach(printCategoryDescription);

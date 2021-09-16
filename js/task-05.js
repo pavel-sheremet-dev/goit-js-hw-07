@@ -6,8 +6,7 @@ const refs = {
 refs.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
-  refs.lableName.textContent = event.target.value;
-  if (!event.target.value) {
-    refs.lableName.textContent = 'Незнакомец';
-  }
+  refs.lableName.textContent = !event.target.value
+    ? 'Незнакомец'
+    : event.target.value;
 }
